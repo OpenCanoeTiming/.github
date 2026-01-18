@@ -29,11 +29,14 @@ Our goal is to make professional-quality timing displays and tools accessible to
 ## Architecture
 
 ```
-┌─────────────────┐     TCP :27333     ┌─────────────────┐
-│    Canoe123     │◄──────────────────►│   c123-server   │
-│  (timing SW)    │                    │   :27123        │
-└─────────────────┘                    └────────┬────────┘
-                                                │
+┌─────────────────┐                    ┌─────────────────┐
+│    Canoe123     │     TCP :27333     │   c123-server   │
+│  (timing SW)    │◄──────────────────►│     :27123      │
+│                 │                    │                 │
+│   ┌─────────┐   │   file polling     │                 │
+│   │ XML DB  │──────────────────────►│                 │
+│   └─────────┘   │                    └────────┬────────┘
+└─────────────────┘                             │
                               ┌─────────────────┼─────────────────┐
                               │ WebSocket /ws   │ REST API        │
                               ▼                 ▼                 ▼
@@ -80,13 +83,9 @@ import { Button, Card, Badge } from '@opencanoetiming/timing-design-system/react
 - **Styling:** CSS with design tokens, dark/light themes
 - **Protocol:** Canoe123 TCP/XML
 
-## Contributing
+## Contact
 
-We welcome contributions! Each project has its own `CONTRIBUTING.md` with specific guidelines.
-
-- Report bugs and request features via GitHub Issues
-- Submit pull requests with clear descriptions
-- Follow existing code style and conventions
+Interested in contributing or have questions? Reach out via GitHub - you can find the organization owner's contact through the [OpenCanoeTiming profile](https://github.com/OpenCanoeTiming).
 
 ## Acknowledgements
 
