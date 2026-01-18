@@ -16,7 +16,7 @@ Our goal is to make professional-quality timing displays and tools accessible to
 |---------|-------------|--------|
 | [c123-scoreboard](https://github.com/OpenCanoeTiming/c123-scoreboard) | Real-time scoreboard for live race display | Active |
 | [c123-server](https://github.com/OpenCanoeTiming/c123-server) | WebSocket bridge between Canoe123 and web clients | Active |
-| [c123-scoring](https://github.com/OpenCanoeTiming/c123-scoring) | Penalty entry and protocol verification app | In Development |
+| [c123-penalty-check](https://github.com/OpenCanoeTiming/c123-penalty-check) | Penalty entry and protocol verification app | In Development |
 
 ### Infrastructure
 
