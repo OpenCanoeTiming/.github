@@ -40,10 +40,10 @@ Our goal is to make professional-quality timing displays and tools accessible to
                               ┌─────────────────┼───────────────────┐
                               │ WebSocket /ws   │ REST API          │
                               ▼                 ▼                   ▼
-                    ┌─────────────────┐ ┌──────────────────────┐ ┌─────────────┐
-                    │ c123-scoreboard │ │ c123-penalties-check │ │ Admin UI    │
-                    │   (display)     │ │       (penalties)    │ │ (config)    │
-                    └─────────────────┘ └──────────────────────┘ └─────────────┘
+                    ┌─────────────────┐ ┌─────────────────┐ ┌─────────────┐
+                    │ c123-scoreboard │ │ c123-penalty-   │ │ Admin UI    │
+                    │   (display)     │ │     check       │ │ (config)    │
+                    └─────────────────┘ └─────────────────┘ └─────────────┘
 ```
 
 ## Quick Start
