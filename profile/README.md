@@ -34,20 +34,34 @@ Our goal is to make professional-quality timing displays and tools accessible to
 ## Architecture
 
 ```mermaid
-graph TD
-    C123["Canoe123<br/><small>timing SW</small>"]
-    DB["XML DB"]
-    SRV["c123-server<br/><small>:27123</small>"]
-    SB["c123-scoreboard<br/><small>display</small>"]
-    PC["c123-penalty-check<br/><small>penalties</small>"]
-    ADMIN["Admin UI<br/><small>config</small>"]
+graph LR
+    subgraph canoe123 ["Canoe123 (timing SW)"]
+        C123[Desktop App]
+        DB[(XML DB)]
+    end
 
-    C123 <-->|"TCP :27333"| SRV
-    DB -->|"file polling"| SRV
-    DB --- C123
-    SRV -->|"WebSocket /ws"| SB
-    SRV -->|"WebSocket /ws"| PC
-    SRV -->|"REST API"| ADMIN
+    subgraph server ["c123-server (:27123)"]
+        TCP[TCP Bridge]
+        WS[WebSocket]
+        REST[REST API]
+    end
+
+    subgraph clients ["Web Clients"]
+        SB[c123-scoreboard]
+        PC[c123-penalty-check]
+        ADMIN[Admin UI]
+    end
+
+    C123 <-->|"TCP :27333"| TCP
+    DB -.->|"file polling"| TCP
+    WS --> SB
+    WS --> PC
+    REST --> ADMIN
+
+    style canoe123 fill:#1a1a2e,stroke:#e94560,stroke-width:2px,color:#fff
+    style server fill:#1a1a2e,stroke:#0f3460,stroke-width:2px,color:#fff
+    style clients fill:#1a1a2e,stroke:#533483,stroke-width:1px,color:#fff
+    style DB fill:none,stroke:#888,stroke-dasharray:5 5,color:#ccc
 ```
 
 ## Quick Start
