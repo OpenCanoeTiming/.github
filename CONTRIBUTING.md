@@ -27,7 +27,7 @@ clear record of *why* changes are made.
 
 ### Branch naming
 
-Use a descriptive name, optionally prefixed with the issue number:
+Use a descriptive name, **prefix with the issue number is highly welcome**:
 
 ```
 feat/12-start-list-panel
@@ -63,13 +63,8 @@ merge, so the final commit message can be cleaned up at merge time.
 
 - **Code** (variables, functions, comments): English
 - **Commit messages**: English
-- **Issues, PR descriptions, discussions**: Czech is fine
-- **Documentation**: Czech with English technical terms
-
-## Tech stack
-
-Most projects use TypeScript, Vite, React, Vitest, and ESLint.
-Check each project's README for specific setup instructions.
+- **Issues, PR descriptions, discussions**: Czech is fine if no non-czech speaker is involved
+- **Documentation**: English 
 
 ## Questions?
 
