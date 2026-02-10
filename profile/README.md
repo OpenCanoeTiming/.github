@@ -17,6 +17,7 @@ Our goal is to make professional-quality timing displays and tools accessible to
 | [c123-scoreboard](https://github.com/OpenCanoeTiming/c123-scoreboard) | Real-time scoreboard for live race display | Active |
 | [c123-server](https://github.com/OpenCanoeTiming/c123-server) | WebSocket bridge between Canoe123 and web clients | Active |
 | [c123-penalty-check](https://github.com/OpenCanoeTiming/c123-penalty-check) | Penalty entry and protocol verification app | In Development |
+| [c123-live-mini](https://github.com/OpenCanoeTiming/c123-live-mini) | Lightweight live results display | Experimental |
 
 ### Infrastructure
 
@@ -24,7 +25,11 @@ Our goal is to make professional-quality timing displays and tools accessible to
 |---------|-------------|
 | [timing-design-system](https://github.com/OpenCanoeTiming/timing-design-system) | Shared UI components and styles |
 | [c123-xml-tools](https://github.com/OpenCanoeTiming/c123-xml-tools) | XML utilities for race data processing |
-| [c123-protocol-docs](https://github.com/OpenCanoeTiming/c123-protocol-docs) | Protocol and XML format documentation |
+| [c123-protocol-docs](https://github.com/OpenCanoeTiming/c123-protocol-docs) | Protocol and XML format documentation (private) |
+
+> **c123-live-mini** is currently our testbed for issue-driven development
+> using Spec-Driven Development (SDD) methodology with
+> [GitHub SpecKit](https://github.com/marketplace/github-speckit) tooling.
 
 ## Architecture
 
@@ -62,20 +67,6 @@ npm install && npm run dev
 
 The scoreboard will be available at `http://localhost:5173` and automatically connects to `c123-server` on port 27123.
 
-### Using the Design System
-
-```bash
-npm install @opencanoetiming/timing-design-system
-```
-
-```javascript
-// Import CSS
-import '@opencanoetiming/timing-design-system/css'
-
-// Or use React components
-import { Button, Card, Badge } from '@opencanoetiming/timing-design-system/react'
-```
-
 ## Technology
 
 - **Frontend:** React, TypeScript, Vite
@@ -83,13 +74,13 @@ import { Button, Card, Badge } from '@opencanoetiming/timing-design-system/react
 - **Styling:** CSS with design tokens, dark/light themes
 - **Protocol:** Canoe123 TCP/XML
 
-## Contact
+## Contributing
 
-Interested in contributing or have questions? Reach out via GitHub - you can find the organization owner's contact through the [OpenCanoeTiming profile](https://github.com/OpenCanoeTiming).
+We welcome contributions! Please read our [Contributing Guide](https://github.com/OpenCanoeTiming/.github/blob/main/CONTRIBUTING.md) before getting started.
 
 ## Acknowledgements
 
-This project would not exist without **[Canoe123](https://www.siwidata.com/)** - the professional timing system developed by **Siwidata**. Canoe123 is the backbone of canoe slalom timing at events worldwide, from local club races to World Championships.
+This project would not exist without **[Canoe123](https://www.siwidata.com/)** — the professional timing system developed by **Siwidata**. Canoe123 is the backbone of canoe slalom timing at events worldwide, from local club races to World Championships.
 
 We extend our gratitude to the Siwidata team for creating such a reliable and feature-rich timing solution, and for the protocol that makes these open-source extensions possible.
 
