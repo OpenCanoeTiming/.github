@@ -33,22 +33,21 @@ Our goal is to make professional-quality timing displays and tools accessible to
 
 ## Architecture
 
-```
-┌─────────────────┐                    ┌─────────────────┐
-│    Canoe123     │     TCP :27333     │   c123-server   │
-│  (timing SW)    │◄──────────────────►│     :27123      │
-│                 │                    │                 │
-│   ┌─────────┐   │   file polling     │                 │
-│   │ XML DB  │──────────────────────►│                 │
-│   └─────────┘   │                    └────────┬────────┘
-└─────────────────┘                             │
-                              ┌─────────────────┼───────────────────┐
-                              │ WebSocket /ws   │ REST API          │
-                              ▼                 ▼                   ▼
-                    ┌─────────────────┐ ┌─────────────────┐ ┌─────────────┐
-                    │ c123-scoreboard │ │ c123-penalty-   │ │ Admin UI    │
-                    │   (display)     │ │     check       │ │ (config)    │
-                    └─────────────────┘ └─────────────────┘ └─────────────┘
+```mermaid
+graph TD
+    C123["Canoe123<br/><small>timing SW</small>"]
+    DB["XML DB"]
+    SRV["c123-server<br/><small>:27123</small>"]
+    SB["c123-scoreboard<br/><small>display</small>"]
+    PC["c123-penalty-check<br/><small>penalties</small>"]
+    ADMIN["Admin UI<br/><small>config</small>"]
+
+    C123 <-->|"TCP :27333"| SRV
+    DB -->|"file polling"| SRV
+    DB --- C123
+    SRV -->|"WebSocket /ws"| SB
+    SRV -->|"WebSocket /ws"| PC
+    SRV -->|"REST API"| ADMIN
 ```
 
 ## Quick Start
