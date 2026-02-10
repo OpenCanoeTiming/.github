@@ -41,26 +41,32 @@ graph LR
     end
 
     subgraph server ["c123-server (:27123)"]
-        TCP[TCP Bridge]
-        WS[WebSocket]
-        REST[REST API]
+        SRV[Bridge + Admin UI]
     end
 
-    subgraph clients ["Web Clients"]
+    subgraph local ["Local Network Clients"]
         SB[c123-scoreboard]
         PC[c123-penalty-check]
-        ADMIN[Admin UI]
     end
 
-    C123 <-->|"TCP :27333"| TCP
-    DB -.->|"file polling"| TCP
-    WS --> SB
-    WS --> PC
-    REST --> ADMIN
+    subgraph cloud ["Public Internet"]
+        MINI_SRV["c123-live-mini<br/>server"]
+        MINI_PAGE["c123-live-mini<br/>page"]
+    end
+
+    C123 <-->|"TCP :27333"| SRV
+    DB -.->|"file polling"| SRV
+    SRV -->|"WebSocket"| SB
+    SRV -->|"WebSocket"| PC
+    PC -->|"REST (scoring)"| SRV
+    SRV -->|"HTTP POST<br/>(data replication)"| MINI_SRV
+    SRV -->|"REST (admin)"| MINI_SRV
+    MINI_SRV -->|"WebSocket + REST"| MINI_PAGE
 
     style canoe123 fill:#1a1a2e,stroke:#e94560,stroke-width:2px,color:#fff
     style server fill:#1a1a2e,stroke:#0f3460,stroke-width:2px,color:#fff
-    style clients fill:#1a1a2e,stroke:#533483,stroke-width:1px,color:#fff
+    style local fill:#1a1a2e,stroke:#533483,stroke-width:1px,color:#fff
+    style cloud fill:#1a1a2e,stroke:#16a34a,stroke-width:2px,color:#fff
     style DB fill:none,stroke:#888,stroke-dasharray:5 5,color:#ccc
 ```
 
