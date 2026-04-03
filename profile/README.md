@@ -23,7 +23,7 @@ Our goal is to make professional-quality timing displays and tools accessible to
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| [timing-design-system](https://github.com/OpenCanoeTiming/timing-design-system) | Shared CSS design system (`@czechcanoe/rvp-design-system`) | Stable |
+| [timing-design-system](https://github.com/OpenCanoeTiming/timing-design-system) | Shared CSS design system (`@opencanoetiming/timing-design-system`) | Stable |
 | [c123-xml-tools](https://github.com/OpenCanoeTiming/c123-xml-tools) | XML utilities for race data processing | Stable |
 | [c123-protocol-docs](https://github.com/OpenCanoeTiming/c123-protocol-docs) | Protocol documentation, recordings, and replay tools (private) | Active |
 
