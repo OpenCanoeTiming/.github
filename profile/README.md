@@ -14,22 +14,18 @@ Our goal is to make professional-quality timing displays and tools accessible to
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| [c123-scoreboard](https://github.com/OpenCanoeTiming/c123-scoreboard) | Real-time scoreboard for live race display | Active |
-| [c123-server](https://github.com/OpenCanoeTiming/c123-server) | WebSocket bridge between Canoe123 and web clients | Active |
-| [c123-penalty-check](https://github.com/OpenCanoeTiming/c123-penalty-check) | Penalty entry and protocol verification app | In Development |
-| [c123-live-mini](https://github.com/OpenCanoeTiming/c123-live-mini) | Lightweight live results display | Experimental |
+| [c123-live-mini](https://github.com/OpenCanoeTiming/c123-live-mini) | Live results for spectators (public internet) | Active development |
+| [c123-server](https://github.com/OpenCanoeTiming/c123-server) | WebSocket bridge between Canoe123 and web clients | Active development |
+| [c123-scoreboard](https://github.com/OpenCanoeTiming/c123-scoreboard) | Real-time scoreboard for on-site race display | Stable |
+| [c123-penalty-check](https://github.com/OpenCanoeTiming/c123-penalty-check) | Penalty verification against paper protocols | Stable (v1.1.0) |
 
 ### Infrastructure
 
-| Project | Description |
-|---------|-------------|
-| [timing-design-system](https://github.com/OpenCanoeTiming/timing-design-system) | Shared UI components and styles |
-| [c123-xml-tools](https://github.com/OpenCanoeTiming/c123-xml-tools) | XML utilities for race data processing |
-| [c123-protocol-docs](https://github.com/OpenCanoeTiming/c123-protocol-docs) | Protocol and XML format documentation (private) |
-
-> **c123-live-mini** is currently our testbed for issue-driven development
-> using Spec-Driven Development (SDD) methodology with
-> [GitHub SpecKit](https://github.com/marketplace/github-speckit) tooling.
+| Project | Description | Status |
+|---------|-------------|--------|
+| [timing-design-system](https://github.com/OpenCanoeTiming/timing-design-system) | Shared CSS design system (`@czechcanoe/rvp-design-system`) | Stable |
+| [c123-xml-tools](https://github.com/OpenCanoeTiming/c123-xml-tools) | XML utilities for race data processing | Stable |
+| [c123-protocol-docs](https://github.com/OpenCanoeTiming/c123-protocol-docs) | Protocol documentation, recordings, and replay tools (private) | Active |
 
 ## Architecture
 
